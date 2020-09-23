@@ -23,15 +23,19 @@ model.eval()
 label = model.forward(images, test_size)
 
 
-# performance metric
 soft = nn.Softmax(dim=1)
-correct = 0
-for i in range(len(images)):
-    if torch.argmax(soft(label)[i]).item() == labels[i].item():
-        correct += 1
-    else:
-        display_image(images[i])
-        print(dataset.classes[torch.argmax(soft(label)[i]).item()])
-        pass
+confusion_matrix = np.zeros((3,3))
 
-print(100*correct/test_size)
+for i in range(len(images)):
+    
+    actual = labels[i].item()
+    pred = torch.argmax(soft(label)[i]).item()
+    
+    confusion_matrix[actual,pred] += 1
+    
+accuracy = 100*np.trace(confusion_matrix)/test_size
+
+print(confusion_matrix)
+print(accuracy)
+
+
