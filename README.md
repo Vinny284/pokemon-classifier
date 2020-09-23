@@ -6,7 +6,7 @@ The goal of this project is to create a model that predicts the type of pokemon 
 
 The data is from https://www.kaggle.com/kvpratama/pokemon-images-dataset. This user has generously provided a dataset of images of pokemon, however I am only using 3 types for classification. This is mainly because they have over 200 images available each, whereas most others have about 20-30, which may be insufficient for image classification. The pokemon I am using are Bulbasaur, Charamnder and Squirtle, shown below. After downloading the dataset I had to rename all of the files for convenience and filter out any images that we not good enough. Some images contained multiple pokemon, too many background items or had variations that were too different from a normal version. I labelled them and sorted split them into test and train data.
 
-![](IMAGES_TRAIN/Bulbasaur0.png)
+![](IMAGES_TRAIN/Bulbasaur0.png 100x100)
 
 ## The model
 
